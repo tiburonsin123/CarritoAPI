@@ -1,0 +1,92 @@
+# ==========================================================
+# Peticiones para CarritoAPI
+# ==========================================================
+
+# Nota: Reemplaza 'https://localhost:7193' por el host/puerto
+# donde se ejecute el proyecto localmente.
+
+### ================= Carrito ====================
+
+### Listar productos en el carrito
+GET https://localhost:7193/api/Cart
+# Devuelve todos los productos que están actualmente en el carrito.
+
+### Agregar producto al carrito
+POST https://localhost:7193/api/Cart
+Content-Type: application/json
+
+{
+  "productId": 3546345,
+  "name": "Hamburguesa clásica",
+  "quantity": 1,
+  "basePrice": 0,
+  "groupAttributes": [
+    {
+      "groupAttributeId": "241887",
+      "attributes": [
+        { "attributeId": 968636, "quantity": 1 }
+      ]
+    },
+    {
+      "groupAttributeId": "241891",
+      "attributes": [
+        { "attributeId": 968663, "quantity": 1 }
+      ]
+    },
+    {
+      "groupAttributeId": "241892",
+      "attributes": [
+        { "attributeId": 968671, "quantity": 1 }
+      ]
+    },
+    {
+      "groupAttributeId": "241888",
+      "attributes": [
+        { "attributeId": 968641, "quantity": 2 }
+      ]
+    }
+  ],
+  "totalPrice": 0
+}
+
+### Actualizar producto en el carrito
+PUT https://localhost:7193/api/Cart/{cartItemId}
+Content-Type: application/json
+
+{
+  "productId": 3546345,
+  "name": "Hamburguesa clásica",
+  "quantity": 1,
+  "basePrice": 0,
+  "groupAttributes": [
+    {
+      "groupAttributeId": "241887",
+      "attributes": [
+        { "attributeId": 968636, "quantity": 1 }
+      ]
+    },
+    {
+      "groupAttributeId": "241891",
+      "attributes": [
+        { "attributeId": 968663, "quantity": 1 }
+      ]
+    },
+    {
+      "groupAttributeId": "241892",
+      "attributes": [
+        { "attributeId": 968671, "quantity": 1 }
+      ]
+    },
+    {
+      "groupAttributeId": "241888",
+      "attributes": [
+        { "attributeId": 968641, "quantity": 2 }
+      ]
+    }
+  ]
+}
+# Reemplaza {cartItemId} por el ID del item que deseas actualizar.
+
+### Eliminar producto del carrito
+DELETE https://localhost:7193/api/Cart/{cartItemId}
+# Reemplaza {cartItemId} por el ID del item que deseas eliminar.
